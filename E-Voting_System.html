@@ -245,9 +245,44 @@
             padding: 20px;
             margin: 20px 0;
         }
+        html, body {
+    height: 100%;
+}
+
+.main-wrapper {
+    min-height: calc(100vh - 100px); /* Adjust based on footer height */
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1; /* Make content fill remaining space */
+}
+
+.footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.95em;
+    border-top: 4px solid #007bff;
+    border-radius: 0 0 15px 15px;
+}
+.footer a.social-link {
+    color: #0e76a8; /* LinkedIn Blue */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer a.social-link:hover {
+    color: #005983;
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
+    <div class="main-wrapper">
     <div class="container">
         <div class="header">
             <h1>🗳️ Secure E-Voting Framework</h1>
@@ -286,10 +321,11 @@
                 <label for="constituency">Constituency:</label>
                 <select id="constituency">
                     <option value="">Select Constituency</option>
-                    <option value="north">North District</option>
-                    <option value="south">South District</option>
-                    <option value="east">East District</option>
-                    <option value="west">West District</option>
+                    <option value="north">North India</option>
+                    <option value="south">South India</option>
+                    <option value="east">East India</option>
+                    <option value="west">West India</option>
+                    <option value="Central">Central & Union</option>
                 </select>
             </div>
 
@@ -322,21 +358,21 @@
             <div id="votingBooth" style="display: none;">
                 <h3>Select Your Candidate</h3>
                 <div class="candidates">
-                    <div class="candidate" data-candidate="alice" onclick="selectCandidate('alice')">
-                        <h4>👩‍💼 Alice Johnson</h4>
-                        <p>Democratic Party</p>
+                    <div class="candidate" data-candidate="Ananya Sharma" onclick="selectCandidate('Ananya Sharma')">
+                        <h4>👩‍💼 Ananya Sharma</h4>
+                        <p>Indian National Congress</p>
                     </div>
-                    <div class="candidate" data-candidate="bob" onclick="selectCandidate('bob')">
-                        <h4>👨‍💼 Bob Smith</h4>
-                        <p>Republican Party</p>
+                    <div class="candidate" data-candidate="Rohan Verma" onclick="selectCandidate('Rohan Verma')">
+                        <h4>👨‍💼 Rohan Verma</h4>
+                        <p>Bharatiya Janata Party</p>
                     </div>
-                    <div class="candidate" data-candidate="carol" onclick="selectCandidate('carol')">
-                        <h4>👩‍⚖️ Carol Davis</h4>
+                    <div class="candidate" data-candidate="Priya Nair" onclick="selectCandidate('Priya Nair')">
+                        <h4>👩‍⚖️ Priya Nair</h4>
                         <p>Independent</p>
                     </div>
-                    <div class="candidate" data-candidate="david" onclick="selectCandidate('david')">
-                        <h4>👨‍🏫 David Wilson</h4>
-                        <p>Green Party</p>
+                    <div class="candidate" data-candidate="Arjun Reddy" onclick="selectCandidate('Arjun Reddy')">
+                        <h4>👨‍🏫 Arjun Reddy</h4>
+                        <p>Aam Aadmi Party</p>
                     </div>
                 </div>
 
@@ -380,6 +416,14 @@
             </div>
         </div>
     </div>
+    </div>
+   <footer class="footer">
+    <p>© 2025 Secure E-Voting Framework. All rights reserved.</p>
+    <p>
+        Developed for Civic Trust & Transparency | 🇮🇳 Made in India <br>
+        <a href="https://www.linkedin.com/in/Venkata-Manoj" target="_blank" class="social-link">Designed by Manoj</a>
+    </p>
+    </footer>
 
     <script>
         // Global variables for the e-voting system
@@ -391,10 +435,10 @@
 
         // Candidates data
         const candidates = {
-            'alice': 'Alice Johnson (Democratic)',
-            'bob': 'Bob Smith (Republican)',
-            'carol': 'Carol Davis (Independent)',
-            'david': 'David Wilson (Green)'
+            'Ananya Sharma': 'Ananya Sharma (Indian National Congress)',
+            'Rohan Verma': 'Rohan Verma (Bharatiya Janata Party)',
+            'Priya Nair': 'Priya Nair (Independent)',
+            'dArjun Reddy': 'Arjun Reddy (Aam Aadmi Party)'
         };
 
         // SHA-256 hashing function
